@@ -34,10 +34,12 @@ public class Main {
                 System.out.print("Phone Number : ");
                 String phoneNumber = sc.nextLine();
 
+                // Validation logic from your original code
                 if (phoneNumber.length() != 10) throw new IllegalArgumentException("Invalid Phone Number (Must be 10 digits)");
                 if (!email.contains("@")) throw new IllegalArgumentException("Invalid Email");
 
                 System.out.print("Initial Balance : ");
+                // FIX: Use parseDouble(nextLine()) to avoid scanner buffer issues
                 double balance = Double.parseDouble(sc.nextLine());
                 double od = 0;
                 if (type.equalsIgnoreCase("Current")) {
@@ -102,6 +104,7 @@ public class Main {
                 break;
 
             case "7":
+                // Implemented Reporting Dashboard
                 System.out.println("\n--- Reporting Dashboard ---");
                 System.out.println("1. List Accounts > Balance");
                 System.out.println("2. Sort Accounts by Balance");
